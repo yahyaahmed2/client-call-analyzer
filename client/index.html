@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container" role="main">
+  <main class="container">
     <h1>Client Call Analyzer</h1>
-    <h2>      Analyze client calls with AI using call transcripts</h2>
-    <p>step 1: add a text file with the call record</p>
-    <p>step 2: AI analyzes your call</p>
-    <p>step 3: get feedback on customer needs and sentiment!</p>
+    <p>Analyze client sentiment, objections, and deal potential from your call transcript.</p>
 
-    <label for="fileInput" class="visually-hidden">Upload Transcript</label>
-    <input type="file" id="fileInput" accept=".txt" aria-label="Upload Transcript"/>
+    <p><strong>Step 1:</strong> Upload a .txt call transcript</p>
+    <p><strong>Step 2:</strong> Let AI do the analysis</p>
+    <p><strong>Step 3:</strong> See insights instantly</p>
+
+    <input type="file" id="fileInput" accept=".txt" />
+    <br/>
     <button id="analyzeBtn" type="button">Analyze</button>
 
-    <output id="output" aria-live="polite"></output>
+    <output id="output"></output>
   </main>
 
   <script src="script.js"></script>

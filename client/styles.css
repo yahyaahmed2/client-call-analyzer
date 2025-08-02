@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 60px 20px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 700px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.container h1 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+input[type="file"] {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+button {
+  background-color: #2d6cdf;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #1f56ba;
+}
+
+output#output {
+  display: block;
+  margin-top: 30px;
+  background-color: #f0f2f5;
+  padding: 20px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  border-left: 4px solid #2d6cdf;
+  min-height: 60px;
+}
+
+/* Accessibility helper */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

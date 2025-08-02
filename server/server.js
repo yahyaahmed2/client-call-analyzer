@@ -23,7 +23,7 @@ app.use(limiter);
 
 const upload = multer({ dest: 'transcripts/' });
 
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.use(express.json());
 

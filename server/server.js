@@ -8,7 +8,7 @@ const { OpenAI } = require('openai');
 require('dotenv').config();
 const rateLimit = require('express-rate-limit');
 const app = express();
-const port = 5050;
+const port = process.env.port | 5050;
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const limiter = rateLimit({
@@ -23,7 +23,7 @@ app.use(limiter);
 
 const upload = multer({ dest: 'transcripts/' });
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.use(express.json());
 

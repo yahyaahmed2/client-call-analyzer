@@ -17,7 +17,12 @@ document.getElementById('analyzeBtn').addEventListener('click', async () => {
   const formData = new FormData();
   formData.append('transcript', file);
 
+  // Show loader
   output.textContent = '⏳ Analyzing call...';
+  const loader = document.createElement('span');
+  loader.classList.add('loader');
+  output.appendChild(loader);
+  output.classList.add('show');
 
   try {
     const response = await fetch('http://localhost:5050/upload', {
@@ -31,9 +36,13 @@ document.getElementById('analyzeBtn').addEventListener('click', async () => {
 
     if (!data.result) throw new Error("Malformed response from server.");
 
-    output.textContent = data.result;
+    const formatted = data.result.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+    output.innerHTML = formatted;
+    output.classList.add('show');
   } catch (err) {
     console.error(err);
     output.textContent = '❌ Error analyzing call. Check console for details.';
+    output.classList.add('show');
   }
 });

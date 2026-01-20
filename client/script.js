@@ -3,13 +3,11 @@ const fileInput = document.getElementById('fileInput');
 const analyzeBtn = document.getElementById('analyzeBtn');
 const output = document.getElementById('output');
 
-// Create a file name display element
 const fileNameDisplay = document.createElement('p');
 fileNameDisplay.style.marginTop = '0.5rem';
 fileNameDisplay.style.fontWeight = 'bold';
 dropArea.appendChild(fileNameDisplay);
 
-// Update display when a file is selected
 fileInput.addEventListener('change', () => {
   if (fileInput.files.length) {
     fileNameDisplay.textContent = `📄 Selected file: ${fileInput.files[0].name}`;
@@ -18,7 +16,6 @@ fileInput.addEventListener('change', () => {
   }
 });
 
-// Drag & drop UI
 dropArea.addEventListener('dragover', e => {
   e.preventDefault();
   dropArea.style.backgroundColor = '#f0f8ff';
@@ -39,10 +36,8 @@ dropArea.addEventListener('drop', e => {
   }
 });
 
-// Click to open file dialog
 dropArea.addEventListener('click', () => fileInput.click());
 
-// Analyze button
 analyzeBtn.addEventListener('click', async () => {
   if (!fileInput.files.length) {
     alert('⚠️ Please select a file.');
@@ -57,11 +52,14 @@ analyzeBtn.addEventListener('click', async () => {
     'audio/wav',
     'audio/mpeg',
     'audio/mp4',
-    'audio/x-m4a'
+    'audio/x-m4a',
+    'audio/webm', 
+    'audio/ogg',  
+    'audio/aac'   
   ];
 
   if (!allowedTypes.includes(file.type)) {
-    alert('❌ Only .txt or audio files (.wav, .mp3, .m4a, .mp4) are supported.');
+    alert('File type is not supported, try with a different format.');
     return;
   }
 
@@ -87,7 +85,6 @@ analyzeBtn.addEventListener('click', async () => {
     const data = await response.json();
     if (!data.result) throw new Error("Malformed response from server.");
 
-    // Bold headings
     const formatted = data.result.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
     output.innerHTML = formatted;
     output.classList.add('show');

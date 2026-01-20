@@ -57,11 +57,14 @@ analyzeBtn.addEventListener('click', async () => {
     'audio/wav',
     'audio/mpeg',
     'audio/mp4',
-    'audio/x-m4a'
+    'audio/x-m4a',
+    'audio/webm', 
+    'audio/ogg',  
+    'audio/aac'
   ];
 
   if (!allowedTypes.includes(file.type)) {
-    alert('❌ Only .txt or audio files (.wav, .mp3, .m4a, .mp4) are supported.');
+    alert('File type not supported, try without another file format.');
     return;
   }
 

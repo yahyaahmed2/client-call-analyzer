@@ -22,11 +22,21 @@ app.use(limiter);
 app.use(express.static(path.join(__dirname, '../client')));
 app.use(express.json());
 
-// Multer config
 const upload = multer({ dest: 'transcripts/', limits: { fileSize: 50 * 1024 * 1024 } }); // 50MB
 
-// Supported file extensions
-const allowedExtensions = ['.txt', '.flac', '.m4a', '.mp3', '.mp4', '.mpeg', '.mpga', '.oga', '.ogg', '.wav', '.webm'];
+const allowedExtensions = [
+  '.txt',
+  '.flac',
+  '.m4a',
+  '.mp3',
+  '.mpga',   
+  '.oga',    
+  '.ogg',
+  '.wav',
+  '.webm',
+  '.mp4',
+  '.aac'
+];
 
 app.post('/upload', upload.single('transcript'), async (req, res) => {
   let filePath = req.file.path;

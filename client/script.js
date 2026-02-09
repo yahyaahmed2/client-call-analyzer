@@ -3,13 +3,11 @@ const fileInput = document.getElementById('fileInput');
 const analyzeBtn = document.getElementById('analyzeBtn');
 const output = document.getElementById('output');
 
-// Create a file name display element
 const fileNameDisplay = document.createElement('p');
 fileNameDisplay.style.marginTop = '0.5rem';
 fileNameDisplay.style.fontWeight = 'bold';
 dropArea.appendChild(fileNameDisplay);
 
-// Update display when a file is selected
 fileInput.addEventListener('change', () => {
   if (fileInput.files.length) {
     fileNameDisplay.textContent = `📄 Selected file: ${fileInput.files[0].name}`;
@@ -18,7 +16,6 @@ fileInput.addEventListener('change', () => {
   }
 });
 
-// Drag & drop UI
 dropArea.addEventListener('dragover', e => {
   e.preventDefault();
   dropArea.style.backgroundColor = '#f0f8ff';
@@ -51,18 +48,20 @@ analyzeBtn.addEventListener('click', async () => {
 
   const file = fileInput.files[0];
 
-  // Client-side allowed MIME types
-  const allowedTypes = [
-    'text/plain',
-    'audio/wav',
-    'audio/mpeg',
-    'audio/mp4',
-    'audio/x-m4a',
-    'audio/webm', 
-    'audio/ogg',  
-    'audio/aac'
-  ];
-
+const allowedTypes = [
+  'text/plain',
+  'audio/wav',
+  'audio/mpeg',   
+  'audio/mp3',
+  'audio/m4a',
+  'audio/x-m4a',   
+  'audio/aac',
+  'audio/flac',
+  'audio/ogg',     
+  'audio/oga',     
+  'video/mp4',
+  'video/webm'
+];
   if (!allowedTypes.includes(file.type)) {
     alert('File type not supported, try without another file format.');
     return;

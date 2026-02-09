@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
@@ -58,7 +57,6 @@ app.post('/upload', upload.single('transcript'), async (req, res) => {
       transcript = transcription.text;
     }
 
-    // GPT analysis
     const prompt = `
 You are an AI meeting assistant. Analyze this transcript and return a concise summary with bold headings (no Markdown asterisks):
 
@@ -81,12 +79,10 @@ ${transcript}`;
     console.error('Error processing upload:', err);
     res.status(500).send('Internal Server Error');
   } finally {
-    // Clean up temp file
     if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
   }
 });
 
-// Start server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

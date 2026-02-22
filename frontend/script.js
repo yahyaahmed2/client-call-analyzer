@@ -77,7 +77,7 @@ const allowedTypes = [
   output.classList.add('show');
 
   try {
-    const response = await fetch('http://localhost:5050/upload', {
+    const response = await fetch('/upload', {
       method: 'POST',
       body: formData,
     });

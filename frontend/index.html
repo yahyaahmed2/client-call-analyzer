@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Call Analyzer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.7.0/dist/flowbite.min.css" />
+  <script src="https://unpkg.com/flowbite@1.7.0/dist/flowbite.min.js"></script>
+</head>
+<body class="bg-gray-50 flex flex-col items-center min-h-screen p-4">
+
+  <main class="bg-white shadow-lg rounded-lg p-8 w-full max-w-3xl text-center mb-8">
+    <h1 class="text-3xl font-bold mb-6" style="color: rgb(17, 22, 69);">Client Call Analyzer: Turn calls to actionable insights</h1>
+
+    <div class="space-y-4 text-left">
+      <p>1️⃣ Drag & drop or select a file containing text or recording (.wav, .mp3, .m4a, .mp4)</p>
+      <p>2️⃣ Click "Analyze"</p>
+      <p>3️⃣ View insights instantly</p>
+    </div>
+
+    <div class="mt-6 mb-4">
+      <div id="dropArea" class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-gray-500 cursor-pointer hover:border-blue-400 hover:text-blue-600 transition">
+        📂 Drag & Drop your transcript or audio file here
+      </div>
+      <input type="file" id="fileInput" accept=".txt,.wav,.mp3,.m4a,.mp4" class="mt-4" />
+      <button id="analyzeBtn" type="button" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Analyze</button>
+    </div>
+
+    <output id="output" class="block mt-6 text-gray-700">Analysis results will appear here...</output>
+
+    <p class="mt-4 text-gray-500 text-sm">Your recordings are securely processed and immediately discarded. We do not store or access your data post-analysis.</p>
+  </main>
+
+  <div class="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8 mb-8">
+    <h2 class="text-2xl font-bold mb-6" style="color: rgb(17, 22, 69);">Pricing & Efficiency</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="border p-4 rounded-lg hover:shadow-md transition">
+        <dt class="text-gray-600">Analysis of one call (5-minute video)</dt>
+        <dd class="text-3xl font-semibold">$0.04</dd>
+      </div>
+      <div class="border p-4 rounded-lg hover:shadow-md transition">
+        <dt class="text-gray-600">Analysis of a call transcript (text only)</dt>
+        <dd class="text-3xl font-semibold">$0.01</dd>
+      </div>
+      <div class="border p-4 rounded-lg hover:shadow-md transition">
+        <dt class="text-gray-600">Time saved from manual analysis</dt>
+        <dd class="text-3xl font-semibold">95%+</dd>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Section -->
+  <div class="flex justify-center w-full max-w-3xl">
+    <img src="images/Computerguy.jpg" alt="Computer guy" class="rounded-lg shadow-lg max-w-full h-auto" />
+  </div>
+
+  <script src="script.js"> </script>
+
+</body>
+</html>

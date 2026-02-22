@@ -36,10 +36,8 @@ dropArea.addEventListener('drop', e => {
   }
 });
 
-// Click to open file dialog
 dropArea.addEventListener('click', () => fileInput.click());
 
-// Analyze button
 analyzeBtn.addEventListener('click', async () => {
   if (!fileInput.files.length) {
     alert('⚠️ Please select a file.');
@@ -89,9 +87,9 @@ const allowedTypes = [
     const data = await response.json();
     if (!data.result) throw new Error("Malformed response from server.");
 
-    // Bold headings
     const formatted = data.result.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-    output.innerHTML = formatted;
+    const withLineBreaks = formatted.replace(/\n/g, '<br>');          
+    output.innerHTML = withLineBreaks;
     output.classList.add('show');
   } catch (err) {
     console.error(err);

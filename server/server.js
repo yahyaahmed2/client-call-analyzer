@@ -19,7 +19,7 @@ const limiter = rateLimit({
 });
 
 app.use(limiter);
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 app.use(express.json());
 
 const upload = multer({ dest: 'transcripts/', limits: { fileSize: 50 * 1024 * 1024 } }); // 50MB

@@ -1,22 +1,26 @@
-Analyze your client calls — instantly.
-Upload a .txt transcript and get insights on:
+Spearful: Turn Client Call Transcripts Into Actionable Insights
 
-😃 Client sentiment (happy, upset, etc.)
+Spearful analyzes your client call transcripts, and recordings with multiple formats supported to ensure you get accurate business insights, and to save you time from manually analzying calls.
 
-❗ Objections and concerns
+Key Features
 
-✅ Action items
+Client Sentiment Analysis: Detect whether clients are happy, frustrated, or neutral
 
-🔥 Deal temperature
+Objections and Concerns: Identify issues before they impact deals
 
-Powered by OpenAI’s GPT-4. No setup, just results.
+Action Item Extraction: Automatically highlight next steps from each call
 
-🖼️ Screenshot: https://postimg.cc/7CqSWs89
-🔗 Live demo: coming soon
+Deal Likelihood Assessment: Prioritize opportunities that require immediate attention
 
-Looking for feedback — especially the brutal kind.
-Anything that sucks (UI, UX, output logic, etc.) — tell me. I’d rather improve than guess. Thanks! 😄
-If you're building or hiring in AI/dev — happy to connect 🙌
+How It Works
 
-My email: Yahya.selim2024@gmail.com
-Linkedin: https://www.linkedin.com/in/yahya-ahmed-a834a530a/
+Spearful leverages GPT-4 to process call transcripts, summarizing critical information and producing insights in seconds. Simply upload a call transcript, or recording, and instantly get business critical insights.
+
+
+Live Demo
+
+spearful-production.up.railway.app
+
+Feedback and Collaboration
+
+We move fast and iterate based on real-world use. Feedback is welcome to make Spearful more precise, actionable, and valuable.

@@ -13,7 +13,7 @@ const port = process.env.PORT || 5050;
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 const limiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
+  windowMs: 60 * 60 * 1000, 
   max: 20,
   message: 'Too many requests from this IP, please try again later.',
 });
